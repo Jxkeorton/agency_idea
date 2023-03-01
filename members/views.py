@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
+
 
 
 def home(request):
@@ -29,3 +29,7 @@ def login_page(request):
         'form': form
     }
     return render(request, 'login.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect(reverse('home'))
