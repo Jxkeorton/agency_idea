@@ -12,13 +12,13 @@
     <body>
         <nav>
             <ul class="nav-list">
-                <li class="nav-item1"><a class="nav-links" href="#">Home</a></li>
+                <li class="nav-item1"><a class="nav-links" href="{% url 'home' %}">Home</a></li>
                 <li class="nav-item1"><a class="nav-links" href="#">Contact</a></li>
             {% if user.is_authenticated %}
                 <li class="nav-item2"><a class="nav-links" href="#">Logout</a></li>
                 <li class="nav-item2"><a class="nav-links" href="#">Profile</a></li>
             {% else %}
-                <li class="nav-item2"><a class="nav-links" href="#">Members Log In</a></li>
+                <li class="nav-item2"><a class="nav-links" href="{% url 'login_page' %}">Members Log In</a></li>
             {% endif %}   
             </ul>
         </nav>
